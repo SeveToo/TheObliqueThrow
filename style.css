@@ -169,7 +169,6 @@ body {
 }
 
 .calculator__result {
-  min-width: 29rem;
   width: 100%;
   display: flex;
   justify-content: center;
