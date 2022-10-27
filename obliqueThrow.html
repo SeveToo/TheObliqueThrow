@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizyka Kalkulatory</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="App__calculator">
+      <span class="calculator__label">Rzut ukośny</span>
+      <form class="input__wrapper">
+        <iframe class="input__animation" src="./animations/rzutUkosny.html" width="200px" height="auto"></iframe>
+        <label class="input">
+          <input class="input__field" id="ankle" type="text" placeholder=" " required value="30">
+          <span class="input__label">
+            φ
+            <sub>0</sub>
+          </span>
+          <span class="input__unit">°</span>
+        </label>
+        <label class="input">
+          <input class="input__field" id="v0" type="text" placeholder=" " required value="10">
+          <span class="input__label">
+            v
+            <sub>0</sub>
+          </span>
+          <span class="input__unit">m/s</span>
+        </label>
+        <label class="input">
+          <input class="input__field" id="y0" type="text" placeholder=" " value="0" required>
+          <span class="input__label">
+            y
+            <sub>0</sub>
+          </span>
+          <span class="input__unit">m</span>
+        </label>
+        <label class="input">
+          <input class="input__field" id="g" type="text" placeholder=" " value="9.81" required>
+          <span class="input__label">g</span>
+          <span class="input__unit">
+            m/s
+            <sup>2</sup>
+          </span>
+        </label>
+        <input type="submit" class="resolve__button" value="&#9888; Oblicz &#9888;"></input>
+      </form>
+      <div class="calculator__result">
+        <div class="calculator__result__row calculator__result__row--sticky">
+          <div class="data">
+            <h3>Dane:</h3>
+            <div class="data__row">
+              <span class="data__label">
+                φ
+                <sub>0</sub>
+              </span>
+              <span id="data__ankle" class="data__value">30</span>
+              <span class="data__unit">°</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                v
+                <sub>0</sub>
+              </span>
+              <span id="data__v0" class="data__value">10</span>
+              <span class="data__unit">m/s</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                y
+                <sub>0</sub>
+              </span>
+              <span id="data__h0" class="data__value">0</span>
+              <span class="data__unit">m</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">g</span>
+              <span id="data__g" class="data__value">9.81</span>
+              <span class="data__unit">
+                m/s
+                <sup>2</sup>
+              </span>
+            </div>
+          </div>
+          <div class="searched">
+            <h3>Szukane:</h3>
+            <div class="searched__row">
+              <span class="searched__label">w</span>
+              <span class="searched__value" id="searched">?</span>
+              <span class="searched__unit">m</span>
+            </div>
+            <div class="searched__row">
+              <span class="searched__label">h</span>
+              <span class="searched__value" id="searched">?</span>
+              <span class="searched__unit">m</span>
+            </div>
+            <div class="searched__row">
+              <span class="searched__label">
+                t
+                <sub></sub>
+              </span>
+              <span class="searched__value" id="searched">?</span>
+              <span class="searched__unit">s</span>
+            </div>
+          </div>
+        </div>
+        <div class="calculator__result__row">
+          <div class="data__solutions">
+            <h3>Rozwiązanie:</h3>
+            <div class="data__row">
+              <span class="data__label">
+                v
+                <sub>y0</sub>
+              </span>
+              <span id="solution__vy0" class="data__value">-</span>
+              <span class="data__unit">m/s</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                v
+                <sub>x0</sub>
+              </span>
+              <span id="solution__vx0" class="data__value">-</span>
+              <span class="data__unit">m/s</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                H
+                <sub>max</sub>
+              </span>
+              <span id="solution__Hmax" class="data__value">-</span>
+              <span class="data__unit">m</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                H
+                <sub>m</sub>
+              </span>
+              <span id="solution__Hm" class="data__value">-</span>
+              <span class="data__unit">m</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                t
+                <sub>↑</sub>
+              </span>
+              <span id="solution__Tw" class="data__value">-</span>
+              <span class="data__unit">s</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                t
+                <sub>↓</sub>
+              </span>
+              <span id="solution__Ts" class="data__value">-</span>
+              <span class="data__unit">s</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                t
+                <sub>↕</sub>
+              </span>
+              <span id="solution__Tc" class="data__value">-</span>
+              <span class="data__unit">s</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                z
+                <sub>c</sub>
+              </span>
+              <span id="solution__Zc" class="data__value">-</span>
+              <span class="data__unit">m</span>
+            </div>
+            <div class="data__row">
+              <span class="data__label">
+                z
+                <sub>m</sub>
+              </span>
+              <span id="solution__Zm" class="data__value">-</span>
+              <span class="data__unit">m</span>
+            </div>
+          </div>
+        </div>
+        <!-- <iframe src="solvingProcess.html"></iframe> -->
+      </div>
+    </div>
+  </div>
+  <script src="./solvingFunctions/helpers.js"></script>
+  <script src="./solvingFunctions/solvingFunctions.js"></script>
+  <script src="solutions.js"></script>
+  <script src="saveData.js"></script>
+  <!-- <script src="obliqueThrow.js"></script> -->
+</body>
+</html>

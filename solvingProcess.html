@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizyka Kalkulatory</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="App__calculator">
+      <div class="calculator__result__row">
+        <div class="calculations">
+          <h3>Wzory podstawowe:</h3>
+          <div class="calculations__section">
+            <div class="calculations__row">
+              <div class="calculation__desc">
+                Poziomo mamy ruch jednostajny prostoliniowy, więc:
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern">
+                  $$x(t) = tv_{0x}$$
+                </div>
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern">
+                  $$x(t) = tv_{0} \cdot cos\left(φ\right)$$
+                </div>
+              </div>
+              <div class="calculation__desc">
+                Z wzoru powyżej możemy wyznaczyć t:
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern">
+                  $$t = \frac{x}{v_{0} \cdot cos\left(φ\right)}$$
+                </div>
+              </div>
+            </div>
+            <div class="calculations__row">
+              <div class="calculation__desc">
+                Pionowo mamy ruch jednostajnie przyspieszony, więc:
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern">
+                  $$y(t) = - \frac{1}{2}gt^{2} + tv_{0y} + y_{0}$$
+                </div>
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern">
+                  $$y(t) = - \frac{1}{2}gt^{2} + tv_{0} \cdot sin\left(φ\right) + y_{0}$$
+                </div>
+              </div>
+            </div>
+            <div class="calculations__row">
+              <div class="calculation__equation__row">
+                <div class="calculation__desc">
+                  składając:
+                </div>
+                <div class="calculation__equation__pattern">
+                  $$y(t)=-\frac{1}{2}gt^{2} + tv_{0} \cdot sin\left(φ\right) +y_{0}$$
+                </div>
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__desc">
+                  oraz:
+                </div>
+                <div class="calculation__equation__pattern">
+                  $${\color{Purple}t = \frac{x}{v_{0} \cdot cos\left(φ\right)}}$$
+                </div>
+                <div class="calculation__desc">
+                  otrzymamy:
+                </div>
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern">
+                  <!-- with color when t -->
+                  $$y({\color{Purple} x})=-\frac{g{\color{Purple}x^{2}}}{ 2{\color{Purple} v_{0}^{2} \cdot cos^{2}\left(φ\right)}}+\frac{v_{0} \cdot sin\left(φ\right){\color{Purple} x}}{{\color{Purple} v_{0} \cdot cos\left(φ\right)}}+y_{0}$$
+                </div>
+              </div>
+              <div class="calculation__desc">
+                co po uproszczeniu daje:
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern calculation__equation__pattern--special">
+                  $$y(x)=-\frac{gx^{2}}{2v_{0}^{2} \cdot cos^{2}\left(φ\right)}+\tan\left(φ\right)x+y_{0}$$
+                  <!-- make the equation with colors -->
+                </div>
+                <div class="calculation__desc calculation__desc--special">
+                  Mając tylko ten jeden wzór możemy wyznaczyć maksymalną wysokość oraz maksymalny zasięg.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calculator__result__row">
+        <div class="calculations">
+          <h3>Obliczenia:</h3>
+          <div class="calculations__section">
+            <div class="calculations__row">
+              <div class="calculation__desc">
+                Wyznaczamy początkową prędkość wzdłuż osi x:
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern">
+                  $$cos\left(\phi\right)=\frac{v_{0x}}{v_{0}}$$
+                </div>
+                <div class="calculation__equation__pattern ">
+                  $$v_{0x}=v_{0} \cdot cos\left(φ\right)$$
+                </div>
+              </div>
+              <div class="calculation__equation__row calculation__equation__row--mt">
+                <div class="calculation__equation__pattern">
+                  $$v_{0x}=10 \cdot cos\left(45°\right)$$
+                </div>
+              </div>
+              <div class="calculation__equation__row calculation__equation__row--center">
+                <div class="calculation__equation__pattern">
+                  $$v_{0x}=7.07$$
+                </div>
+                <div class="calculation__equation__units">
+                  $$\frac{m}{s}$$
+                </div>
+              </div>
+            </div>
+            <div class="calculations__row">
+              <div class="calculation__desc">
+                Wyznaczamy początkową prędkość wzdłuż osi y:
+              </div>
+              <div class="calculation__equation__row">
+                <div class="calculation__equation__pattern">
+                  $$sin\left(\phi\right)=\frac{v_{0y}}{v_{0}}$$
+                </div>
+                <div class="calculation__equation__pattern">
+                  $$v_{0y}=v_{0} \cdot sin\left(φ\right)$$
+                </div>
+              </div>
+              <div class="calculation__equation__row calculation__equation__row--mt">
+                <div class="calculation__equation__pattern">
+                  $$v_{0y}=10 \cdot sin\left(45°\right)$$
+                </div>
+              </div>
+              <div class="calculation__equation__row calculation__equation__row--center">
+                <div class="calculation__equation__pattern">
+                  $$v_{0y}=7.07$$
+                </div>
+                <div class="calculation__equation__units">
+                  $$\frac{m}{s}$$
+                </div>
+              </div>
+            </div>
+            <div class="calculations__section">
+              <div class="calculations__row">
+                <div class="calculation__desc">
+                  Wyznaczamy maksymalną wysokość z y0:
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$h_{max}=\frac{v_{0y}^{2}}{ 2g} +
+              y_{0}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__units">
+                    $$\frac{\frac{m^2}{s^2}}{\frac{m}{s^2}} + m = \frac{m^2}{s^2} \cdot \frac{s^2}{m} + m = m$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$h_{max}=\frac{10^2}{2 \cdot 9.81}+0$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row calculation__equation__row--center">
+                  <div class="calculation__equation__pattern">
+                    $$h_{max}=2.04$$
+                  </div>
+                  <div class="calculation__equation__units">
+                    $$m$$
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculations__section">
+              <div class="calculations__row">
+                <div class="calculation__desc">
+                  Wyznaczamy czas lotu uwzględniając wysokość początkową:
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t_{lotu}=\frac{ 2v_{0y}}{g}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__units">
+                    $$\frac{\frac{m}{s}}{\frac{m}{s^2}} = s$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t=\frac{2 \cdot 10}{9.81}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row calculation__equation__row--center">
+                  <div class="calculation__equation__pattern">
+                    $$t=2.04$$
+                  </div>
+                  <div class="calculation__equation__units">
+                    $$s$$
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculations__section">
+              <div class="calculations__row">
+                <div class="calculation__desc">
+                  Wyznaczamy maksymalną odległość z y0:
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$w_{max}=\frac{v_{0x}^{2}}{g}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__units">
+                    $$\frac{\frac{m^2}{s^2}}{\frac{m}{s^2}} = m$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$w_{max}=\frac{10^2}{9.81}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row calculation__equation__row--center">
+                  <div class="calculation__equation__pattern">
+                    $$w_{max}=10.3$$
+                  </div>
+                  <div class="calculation__equation__units">
+                    $$m$$
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculations__section">
+              <div class="calculations__row">
+                <div class="calculation__desc">
+                  Wyznaczamy czas wznoszenia:
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t_{wznoszenia}=\frac{v_{0y}}{g}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t_{wznoszenia}=\frac{v_{0} \cdot sin\left(φ\right) }{g}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t=\frac{2 \cdot 10}{9.81}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row calculation__equation__row--center">
+                  <div class="calculation__equation__pattern">
+                    $$t=2.04$$
+                  </div>
+                  <div class="calculation__equation__units">
+                    $$s$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__units">
+                    $$\frac{\frac{m}{s}}{\frac{m}{s^2}} = s$$
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculations__section">
+              <div class="calculations__row">
+                <div class="calculation__desc">
+                  Wyznaczamy czas opadania:
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t_{opadania}=\sqrt{\frac{2H_{max}}{g}}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $${\color{Green}{H_{max}}=\frac{v_{0y}^{2}}{2g} + y_{0}}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__units">
+                    $$\frac{\frac{m^2}{s^2}}{\frac{m}{s^2}} + m = m$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $${\color{Green} H_{max}= \frac{v_{0}^{2} \cdot sin^{2}\left(φ\right)}{2g} + y_{0}}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t_{opadania}=\sqrt{\frac{2 \cdot \left( {\color{Green} \frac{v_{0}^{2} \cdot sin^{2}\left(φ\right)}{2g} + y_{0}} \right)}{g}}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t_{opadania}=\sqrt{\frac{2 \cdot \left(  \frac{10^{2} \cdot sin^{2}\left(45\right)}{2 \cdot 9.81} + 0 \right)}{9.81}}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__pattern">
+                    $$t_{opadania}=\sqrt{\frac{2 \cdot \left(  \frac{10^{2} \cdot 0.707}{2 \cdot 9.81} + 0 \right)}{9.81}}$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row calculation__equation__row--center">
+                  <div class="calculation__equation__pattern">
+                    $$t_{opadania}=1.41$$
+                  </div>
+                  <div class="calculation__equation__units">
+                    $$s$$
+                  </div>
+                </div>
+                <div class="calculation__equation__row">
+                  <div class="calculation__equation__units">
+                    $$\sqrt{\frac{m}{\frac{m}{s^2}}} = $$
+                $$\sqrt{m \cdot \frac{s^2}{m}} = $$
+                $$\sqrt{s^2} = s$$
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
