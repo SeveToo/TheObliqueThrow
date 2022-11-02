@@ -37,8 +37,8 @@ body {
 }
 
 .App {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  /* height: 100%; */
   position: relative;
 }
 
@@ -47,13 +47,13 @@ body {
   border: 3px solid var(--second-color);
   border-radius: var(--size-radius);
   margin-top: 60px;
-  padding: 50px 30px;
+  padding: 1vw 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: var(--size-bezel) var(--size-bezel) 1rem var(--second-color-with-opacity);
-
+  box-sizing: border-box;
 }
 
 .calculator__label {
@@ -71,6 +71,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .input {
@@ -169,7 +170,6 @@ body {
 }
 
 .calculator__result {
-  min-width: 29rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -221,8 +221,10 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem .3rem;
+  max-width: 50vw;
 }
 
 h3 {
@@ -244,6 +246,11 @@ h3 {
   font-size: 24px;
   margin-left: 7px;
   position: relative;
+}
+
+
+.data {
+  width: text-content;
 }
 
 .data__value,.searched__value {
@@ -314,7 +321,6 @@ h3 {
   align-items: center;
   /* gap: 1rem; */
   padding: 1.3rem .3rem;
-  /* background: blue; */
   margin: 2px;
   margin-top: 0rem;
   padding-top: 0rem;
@@ -384,4 +390,15 @@ h3 {
 
 iframe {
   width: 110%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    /* background-color: lightblue; */
+  }
+}
+@media only screen and (max-width: 500px) {
+  body {
+    /* background-color: rgb(39, 193, 134); */
+  }
 }
